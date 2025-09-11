@@ -35,10 +35,10 @@ const Contact: FC = () => {
             <Linkedin className="w-4 h-4" /> LinkedIn
           </a>
           <a
-            href="#"
+            href="https://github.com/ifham001"
             className="flex items-center gap-2 hover:underline"
           >
-            <Github className="w-4 h-4" /> https://github.com/ifham001
+            <Github className="w-4 h-4" /> Github
           </a>
     
         </div>

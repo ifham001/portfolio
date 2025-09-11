@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Github, Globe } from "lucide-react";
+import { Github, Globe, BookOpen } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
@@ -32,7 +32,7 @@ import {
   SiDrizzle,
   SiHono,
   SiExpress,
-  SiMongoose
+  SiMongoose,
 } from "react-icons/si";
 
 // Define project type
@@ -55,14 +55,15 @@ const projects: Project[] = [
     image: "/up_next2.png",
     liveLink: "https://www.upnext-lms.xyz",
     githubLink: "https://github.com/ifham001/Up-Next-LMS_Platform",
+    docsLink: "https://docs.upnext-lms.xyz", // added sample docs link
     tech: [
       { title: "Next.js", icon: SiNextdotjs },
       { title: "MongoDB", icon: SiMongodb },
       { title: "Node.js", icon: SiNodedotjs },
       { title: "TailwindCSS", icon: SiTailwindcss },
       { title: "TypeScript", icon: SiTypescript },
-      {title:"Hono",icon:SiHono},
-      {title:"Drizzle-Orm",icon:SiDrizzle}
+      { title: "Hono", icon: SiHono },
+      { title: "Drizzle-Orm", icon: SiDrizzle },
     ],
   },
   {
@@ -78,8 +79,8 @@ const projects: Project[] = [
       { title: "TailwindCSS", icon: SiTailwindcss },
       { title: "Node.js", icon: SiNodedotjs },
       { title: "TypeScript", icon: SiTypescript },
-      {title:"Express",icon:SiExpress},
-      {title:"Mongoose",icon:SiMongoose}
+      { title: "Express", icon: SiExpress },
+      { title: "Mongoose", icon: SiMongoose },
     ],
   },
 ];
@@ -87,20 +88,27 @@ const projects: Project[] = [
 const Projects: FC = () => {
   return (
     <section id="projects" className="max-w-5xl mx-auto px-6 py-12 border-t">
-      <h2 className="text-xl font-semibold mb-6">Projects</h2>
-      <div className="space-y-6">
+      <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
+        Projects
+      </h2>
+
+      {/* Responsive grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 place-items-center">
         {projects.map((project, index) => (
-          <Card key={index}>
+          <Card
+            key={index}
+            className="w-full max-w-lg hover:shadow-xl transition-shadow"
+          >
             {/* Project Image */}
-            <Link href={project.liveLink!}>
-            <Image
-              src={project.image}
-              alt={project.title}
-              width={800}
-              height={400}
-              className="rounded-t-xl object-cover"
-            /></Link>
-           
+            <Link href={project.liveLink ?? "#"} target="_blank">
+              <Image
+                src={project.image}
+                alt={project.title}
+                width={800}
+                height={400}
+                className="rounded-t-xl object-cover w-full h-56"
+              />
+            </Link>
 
             {/* Project Info */}
             <CardHeader>
@@ -110,7 +118,7 @@ const Projects: FC = () => {
               <p className="text-gray-700">{project.description}</p>
 
               {/* Tech stack */}
-              <div className="flex flex-wrap gap-4 mt-4">
+              <div className="flex flex-wrap gap-3 mt-4">
                 {project.tech.map((tech, i) => (
                   <div
                     key={i}
@@ -123,30 +131,38 @@ const Projects: FC = () => {
               </div>
 
               {/* Links */}
-             {/* Links */}
-<div className="flex justify-between gap-3 mt-4">
-  {project.liveLink && (
-    <a
-      href={project.liveLink}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors"
-    >
-      <Globe className="w-4 h-4" /> Live
-    </a>
-  )}
-  {project.githubLink && (
-    <a
-      href={project.githubLink}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors"
-    >
-      <Github className="w-4 h-4" /> GitHub
-    </a>
-  )}
-</div>
-
+              <div className="flex gap-3 mt-6">
+                {project.liveLink && (
+                  <a
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors"
+                  >
+                    <Globe className="w-4 h-4" /> Live
+                  </a>
+                )}
+                {project.githubLink && (
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors"
+                  >
+                    <Github className="w-4 h-4" /> GitHub
+                  </a>
+                )}
+                {project.docsLink && (
+                  <a
+                    href={project.docsLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors"
+                  >
+                    <BookOpen className="w-4 h-4" /> Docs
+                  </a>
+                )}
+              </div>
             </CardContent>
           </Card>
         ))}

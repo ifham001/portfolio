@@ -22,9 +22,9 @@ const Hero: FC = () => {
           <Image
             src="/me2.png" // 👉 replace with your image in /public
             alt="Ifham Baig"
-            width={160}
-            height={160}
-            className="rounded-full object-cover"
+            width={180}
+            height={180}
+            className=" justify-center rounded-full object-cover"
           />
         </div>
       </div>
