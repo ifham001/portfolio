@@ -152,16 +152,7 @@ const Projects: FC = () => {
                     <Github className="w-4 h-4" /> GitHub
                   </a>
                 )}
-                {project.docsLink && (
-                  <a
-                    href={project.docsLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors"
-                  >
-                    <BookOpen className="w-4 h-4" /> Docs
-                  </a>
-                )}
+                
               </div>
             </CardContent>
           </Card>
