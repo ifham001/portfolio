@@ -29,6 +29,12 @@ import {
   SiTerraform,
   SiStrapi,
   SiTrpc,
+  SiRedux,
+  SiExpress,
+  SiHono,
+  SiDrizzle,
+  SiMongoose,
+  SiDragonframe,
 } from "react-icons/si";
 
 // Skill type
@@ -44,16 +50,17 @@ const skills = {
     { name: "React", icon: SiReact, color: "#61DAFB" },
     { name: "Next.js", icon: SiNextdotjs, color: "black" },
     { name: "CSS", icon: SiCss3, color: "#1572B6" },
+    {name:"Redux",icon:SiRedux,color:"#black"},
     { name: "Tailwind", icon: SiTailwindcss, color: "#06B6D4" },
-    { name: "Vite", icon: SiVite, color: "#646CFF" },
+
   ],
   backend: [
     { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
-    { name: "Python", icon: SiPython, color: "#3776AB" },
+    { name: "Express", icon: SiExpress, color: "#3776AB" },
     { name: "Go", icon: SiGo, color: "#00ADD8" },
     { name: "REST", icon: SiStrapi, color: "#FF6F00" },
     { name: "GraphQL", icon: SiGraphql, color: "#E10098" },
-    { name: "gRPC", icon: SiTrpc, color: "#4285F4" },
+    { name: "Hono", icon: SiHono, color: "orange" },
   ],
   databases: [
     { name: "PostgreSQL", icon: SiPostgresql, color: "#336791" },
@@ -64,11 +71,11 @@ const skills = {
   ],
   tools: [
     { name: "Docker", icon: SiDocker, color: "#2496ED" },
-    { name: "Kubernetes", icon: SiKubernetes, color: "#326CE5" },
-    { name: "AWS", icon: SiAmazon, color: "#FF9900" },
+    { name: "Drizzle-orm", icon: SiDrizzle, color: "#326CE5" },
+    { name: "Mongoose", icon: SiMongoose, color: "#FF9900" },
     { name: "CI/CD", icon: SiGithubactions, color: "#2088FF" },
     { name: "Git", icon: SiGit, color: "#F05032" },
-    { name: "Terraform", icon: SiTerraform, color: "#7B42BC" },
+    { name: "Gorm", icon: SiDragonframe, color: "#7B42BC" },
   ],
 };
 

@@ -18,18 +18,18 @@ const Contact: FC = () => {
         <div className="space-y-3 text-gray-700">
           <p className="flex items-center gap-2">
             <Mail className="w-4 h-4 text-gray-500" />
-            your.email@example.com
+            ifhambaig001@gmail.com
           </p>
           <p className="flex items-center gap-2">
             <MapPin className="w-4 h-4 text-gray-500" />
-            Based in Anywhere
+            Based in India
           </p>
         </div>
 
         {/* Right Side */}
         <div className="flex flex-col space-y-3 text-blue-600 font-medium">
           <a
-            href="#"
+            href="https://www.linkedin.com/in/ifham-baig-317830184"
             className="flex items-center gap-2 hover:underline"
           >
             <Linkedin className="w-4 h-4" /> LinkedIn
@@ -38,14 +38,9 @@ const Contact: FC = () => {
             href="#"
             className="flex items-center gap-2 hover:underline"
           >
-            <Github className="w-4 h-4" /> GitHub
+            <Github className="w-4 h-4" /> https://github.com/ifham001
           </a>
-          <a
-            href="#"
-            className="flex items-center gap-2 hover:underline"
-          >
-            <Rss className="w-4 h-4" /> Blog
-          </a>
+    
         </div>
       </div>
     </section>

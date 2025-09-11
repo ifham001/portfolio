@@ -2,72 +2,154 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Github, Globe } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 import { FC } from "react";
+import {
+  SiTypescript,
+  SiReact,
+  SiNextdotjs,
+  SiCss3,
+  SiTailwindcss,
+  SiVite,
+  SiNodedotjs,
+  SiPython,
+  SiGo,
+  SiGraphql,
+  SiPostgresql,
+  SiMysql,
+  SiMongodb,
+  SiRedis,
+  SiSqlite,
+  SiDocker,
+  SiKubernetes,
+  SiAmazon,
+  SiGit,
+  SiGithubactions,
+  SiTerraform,
+  SiStrapi,
+  SiTrpc,
+  SiDrizzle,
+  SiHono,
+  SiExpress,
+  SiMongoose
+} from "react-icons/si";
+
+// Define project type
+interface Project {
+  title: string;
+  description: string;
+  image: string;
+  liveLink?: string;
+  githubLink?: string;
+  docsLink?: string;
+  tech: { title: string; icon: FC<{ className?: string }> }[];
+}
+
+// Project data
+const projects: Project[] = [
+  {
+    title: "📚 Up Next (Learning Management System)",
+    description:
+      "A full-stack LMS for students, instructors, and admins. Features include course creation, video uploads, quizzes with auto-grading, progress tracking, and subscription-based payments.",
+    image: "/up_next2.png",
+    liveLink: "https://www.upnext-lms.xyz",
+    githubLink: "https://github.com/ifham001/Up-Next-LMS_Platform",
+    tech: [
+      { title: "Next.js", icon: SiNextdotjs },
+      { title: "MongoDB", icon: SiMongodb },
+      { title: "Node.js", icon: SiNodedotjs },
+      { title: "TailwindCSS", icon: SiTailwindcss },
+      { title: "TypeScript", icon: SiTypescript },
+      {title:"Hono",icon:SiHono},
+      {title:"Drizzle-Orm",icon:SiDrizzle}
+    ],
+  },
+  {
+    title: "💎 Benominal (Jewelry Store)",
+    description:
+      "An e-commerce platform for stainless steel jewelry. Includes curated collections, cart system, product uploads with image previews, inventory management, and JWT authentication.",
+    image: "/benominal.png",
+    liveLink: "https://www.benominal.in",
+    githubLink: "https://github.com/ifham001/benominal_jewelry_store",
+    tech: [
+      { title: "Next.js", icon: SiNextdotjs },
+      { title: "PostgreSQL", icon: SiPostgresql },
+      { title: "TailwindCSS", icon: SiTailwindcss },
+      { title: "Node.js", icon: SiNodedotjs },
+      { title: "TypeScript", icon: SiTypescript },
+      {title:"Express",icon:SiExpress},
+      {title:"Mongoose",icon:SiMongoose}
+    ],
+  },
+];
 
 const Projects: FC = () => {
   return (
     <section id="projects" className="max-w-5xl mx-auto px-6 py-12 border-t">
       <h2 className="text-xl font-semibold mb-6">Projects</h2>
       <div className="space-y-6">
-        <Card>
-          <CardHeader>
-            <CardTitle>Project One — SaaS Dashboard</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-gray-700">
-              Designed and built a multi-tenant analytics dashboard with
-              role-based access, real-time charts, and billing integration.
-            </p>
-            <div className="flex gap-4 mt-3 text-sm">
-              <a href="#" className="text-blue-600 hover:underline flex items-center gap-1">
-                <Globe className="w-4 h-4" /> Live
-              </a>
-              <a href="#" className="text-blue-600 hover:underline flex items-center gap-1">
-                <Github className="w-4 h-4" /> GitHub
-              </a>
-            </div>
-          </CardContent>
-        </Card>
+        {projects.map((project, index) => (
+          <Card key={index}>
+            {/* Project Image */}
+            <Link href={project.liveLink!}>
+            <Image
+              src={project.image}
+              alt={project.title}
+              width={800}
+              height={400}
+              className="rounded-t-xl object-cover"
+            /></Link>
+           
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Project Two — Marketing Site Generator</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-gray-700">
-              Static site generator with MDX support, instant previews, and
-              headless CMS integration, optimized for Lighthouse scores.
-            </p>
-            <div className="flex gap-4 mt-3 text-sm">
-              <a href="#" className="text-blue-600 hover:underline flex items-center gap-1">
-                <Globe className="w-4 h-4" /> Live
-              </a>
-              <a href="#" className="text-blue-600 hover:underline flex items-center gap-1">
-                <Github className="w-4 h-4" /> GitHub
-              </a>
-            </div>
-          </CardContent>
-        </Card>
+            {/* Project Info */}
+            <CardHeader>
+              <CardTitle>{project.title}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-700">{project.description}</p>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Project Three — Auth Service</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-gray-700">
-              JWT-based authentication and authorization service with OAuth
-              providers, session management, and audit logging.
-            </p>
-            <div className="flex gap-4 mt-3 text-sm">
-              <a href="#" className="text-blue-600 hover:underline flex items-center gap-1">
-                Docs
-              </a>
-              <a href="#" className="text-blue-600 hover:underline flex items-center gap-1">
-                <Github className="w-4 h-4" /> GitHub
-              </a>
-            </div>
-          </CardContent>
-        </Card>
+              {/* Tech stack */}
+              <div className="flex flex-wrap gap-4 mt-4">
+                {project.tech.map((tech, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center gap-2 bg-gray-100 px-3 py-1 rounded-lg text-sm"
+                  >
+                    <tech.icon className="w-4 h-4 text-gray-700" />
+                    <span>{tech.title}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Links */}
+             {/* Links */}
+<div className="flex justify-between gap-3 mt-4">
+  {project.liveLink && (
+    <a
+      href={project.liveLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors"
+    >
+      <Globe className="w-4 h-4" /> Live
+    </a>
+  )}
+  {project.githubLink && (
+    <a
+      href={project.githubLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors"
+    >
+      <Github className="w-4 h-4" /> GitHub
+    </a>
+  )}
+</div>
+
+            </CardContent>
+          </Card>
+        ))}
       </div>
     </section>
   );
