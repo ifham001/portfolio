@@ -83,6 +83,22 @@ const projects: Project[] = [
       { title: "Mongoose", icon: SiMongoose },
     ],
   },
+  {
+    title: "Reshape.ai",
+    description:
+      "Redesigned the Reshape Systems website, showcasing their AI-powered risk analysis platform. Focused on a clean, professional UI with responsive layouts, modern components, and smooth user experience to highlight their mission of simplifying complex engineering workflows.",
+    image: "/reshape.png",
+    liveLink: "https://reshapesystem.vercel.app/",
+    githubLink: "https://github.com/ifham001/reshape",
+    tech: [
+      { title: "Next.js", icon: SiNextdotjs },
+    
+      { title: "TailwindCSS", icon: SiTailwindcss },
+      { title: "Node.js", icon: SiNodedotjs },
+      { title: "TypeScript", icon: SiTypescript },
+     
+    ],
+  },
 ];
 
 const Projects: FC = () => {
