@@ -58,7 +58,8 @@ const projects: Project[] = [
     docsLink: "https://docs.upnext-lms.xyz", // added sample docs link
     tech: [
       { title: "Next.js", icon: SiNextdotjs },
-      { title: "MongoDB", icon: SiMongodb },
+      { title: "PostgreSQL", icon: SiPostgresql },
+ 
       { title: "Node.js", icon: SiNodedotjs },
       { title: "TailwindCSS", icon: SiTailwindcss },
       { title: "TypeScript", icon: SiTypescript },
@@ -75,7 +76,7 @@ const projects: Project[] = [
     githubLink: "https://github.com/ifham001/benominal_jewelry_store",
     tech: [
       { title: "Next.js", icon: SiNextdotjs },
-      { title: "PostgreSQL", icon: SiPostgresql },
+      { title: "MongoDB", icon: SiMongodb },
       { title: "TailwindCSS", icon: SiTailwindcss },
       { title: "Node.js", icon: SiNodedotjs },
       { title: "TypeScript", icon: SiTypescript },
@@ -84,7 +85,7 @@ const projects: Project[] = [
     ],
   },
   {
-    title: "Reshape.ai",
+    title: "Reshape",
     description:
       "Redesigned the Reshape Systems website, showcasing their AI-powered risk analysis platform. Focused on a clean, professional UI with responsive layouts, modern components, and smooth user experience to highlight their mission of simplifying complex engineering workflows.",
     image: "/reshape.png",
